@@ -5,7 +5,10 @@ var Customer = function( name, wallet ){
 };
 
 Customer.prototype = {
-  
-}
+  buyRecord: function( record ){
+    this.collection.push( record );
+    this.wallet -= record.price;
+  }
+};
 
 module.exports = Customer;
