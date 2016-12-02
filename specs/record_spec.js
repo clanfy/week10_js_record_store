@@ -27,4 +27,6 @@ describe( "Record", function(){
     assert.equal( 6.66, bieberRecord.price );
   });
 
+  
+
 });
