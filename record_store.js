@@ -22,6 +22,7 @@ RecordStore.prototype = {
       return record.title;
     });
   }
+  
 };
 
 module.exports = RecordStore;
