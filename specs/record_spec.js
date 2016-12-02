@@ -13,4 +13,8 @@ describe( "Record", function(){
     assert.equal( "Mariah Carey", mariahRecord.artist );
   });
 
+  it( "should have title passed in constructor", function(){
+    assert.equal( "Merry Christmas", mariahRecord.title );
+  });
+
 });
