@@ -81,7 +81,7 @@ describe( "Record Store", function(){
   it(" should report the financials of the store", function(){
     populatedStore.sellRecord("The Beach Boys Christmas Album");
     assert.equal("Inventory Value: £25.66, Bank Balance: £1012.50", populatedStore.reportFinancials() );
-  })
+  });
 
 });
 

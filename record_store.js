@@ -43,6 +43,11 @@ inventoryValue: function(){
   });
   return prices.reduce( function( a, b ){
     return a + b}, 0)
+},
+reportFinancials: function(){
+  var financialsString = 
+  "Inventory Value: £" + (this.inventoryValue().toFixed(2)).toString() + ", " + "Bank Balance: £" + (this.balance.toFixed(2)).toString();
+  return financialsString; 
 }
 
 };
