@@ -48,8 +48,12 @@ describe( "Record Store", function(){
   });
 
   it("should list inventory", function(){
-    assert.equal(["Merry Christmas", "The Beach Boys Christmas Album", "A Jolly Christmas From Frank Sinatra", "Under the Mistletoe"], populatedStore.returnInventoryList());
-  })
+    assert.deepEqual([mariahRecord, beachBoysRecord, frankRecord, bieberRecord], populatedStore.returnInventoryList());
+  });
+
+  it("should list inventory titles", function(){
+    assert.deepEqual(["Merry Christmas", "The Beach Boys Christmas Album", "A Jolly Christmas From Frank Sinatra", "Under The Mistletoe"], populatedStore.returnInventoryListTitles());
+  });
 
 });
 
