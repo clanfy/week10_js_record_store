@@ -37,7 +37,7 @@ describe( "Record Store", function(){
 
   it( "should have balance passed in constructor", function(){
     assert.equal( 1000, populatedStore.balance);
-  })
+  });
 
   it( "should have no records if empty store", function(){
     assert.equal( 0, emptyStore.numberOfRecords());
@@ -46,6 +46,10 @@ describe( "Record Store", function(){
   it("should add 4 records", function(){
     assert.equal( 4, populatedStore.numberOfRecords());
   });
+
+  it("should list inventory", function(){
+    assert.equal(["Merry Christmas", "The Beach Boys Christmas Album", "A Jolly Christmas From Frank Sinatra", "Under the Mistletoe"], populatedStore.returnInventoryList());
+  })
 
 });
 
