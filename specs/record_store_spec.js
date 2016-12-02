@@ -13,7 +13,11 @@ describe( "Record Store", function(){
 
   it( "should have record store name passed in constructor", function(){
     assert.equal( "Rockin' Reindeer", emptyStore.name );
-  } )
+  });
+
+  it( "should have no records if empty store", function(){
+    assert.equal( 0, emptyStore.records.length);
+  });
 
 });
 
