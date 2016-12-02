@@ -20,6 +20,10 @@ describe( "Record Store", function(){
     frankRecord = new Record( "Frank Sinatra", "A Jolly Christmas From Frank Sinatra", 9.00);
     bieberRecord = new Record( "Justin Bieber", "Under The Mistletoe", 6.66);
 
+    populatedStore.addRecord( mariahRecord );
+    populatedStore.addRecord( beachBoysRecord );
+    populatedStore.addRecord( frankRecord );
+    populatedStore.addRecord( bieberRecord );
 
   });
 
@@ -30,6 +34,10 @@ describe( "Record Store", function(){
   it( "should have no records if empty store", function(){
     assert.equal( 0, emptyStore.numberOfRecords());
   });
+
+  it("should add 4 records", function(){
+    assert.equal( 4, populatedStore.numberOfRecords());
+  })
 
 });
 
