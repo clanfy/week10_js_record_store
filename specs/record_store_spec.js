@@ -74,5 +74,9 @@ describe( "Record Store", function(){
     assert.equal( 1009.00, populatedStore.balance);
   });
 
+  it( "should report value of inventory", function(){
+    assert.equal( 28.16, populatedStore.inventoryValue());
+  });
+
 });
 
