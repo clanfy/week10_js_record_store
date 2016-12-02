@@ -15,6 +15,6 @@ describe( "Customer", function(){
 
   it( "should have customer wallet passed to constructor", function(){
     assert.equal( 100.00, santa.wallet );
-  })
+  });
 
 });
