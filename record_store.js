@@ -18,17 +18,24 @@ RecordStore.prototype = {
     });
   },
   returnInventoryListTitles: function(){
-     return this.records.map(function( record ){
-      return record.title;
-    });
-  },
-  returnIndex: function( title ){
-    var foundRecord = this.records.find( function( record ){
-      var found = record.title === title;
-      return found;
-    });
-    return this.records.indexOf(foundRecord);
+   return this.records.map(function( record ){
+    return record.title;
+  });
+ },
+ returnIndex: function( title ){
+  var foundRecord = this.records.find( function( record ){
+    var found = record.title === title;
+    return found;
+  });
+  return this.records.indexOf(foundRecord);
+},
+sellRecord: function( title ){
+  for ( record of this.records ){
+    if ( title === record.title){
+      this.records.splice((this.returnIndex(title)), 1);
+    };
   }
+}
 
 };
 

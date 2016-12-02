@@ -59,10 +59,10 @@ describe( "Record Store", function(){
     assert.equal( 2, populatedStore.returnIndex("A Jolly Christmas From Frank Sinatra") );
   });
 
-  // it( "should sell a record and have 3 records left", function(){
-  //   populatedStore.sellRecord("Under The Mistletoe")
-  //   assert.equal( 3, populatedStore.numberOfRecords() );
-  // })
+  it( "should sell a record and have 3 records left", function(){
+    populatedStore.sellRecord("Under The Mistletoe")
+    assert.equal( 3, populatedStore.numberOfRecords() );
+  });
 
 });
 
