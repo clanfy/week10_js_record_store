@@ -5,10 +5,22 @@ var Record = require('../record');
 describe( "Record Store", function(){
 
   var emptyStore = null;
-  var stockedStore = null;
+  var stockedStore = null;  
+  var mariahRecord = null;
+  var beachBoysRecord = null;
+  var frankRecord = null;
+  var bieberRecord = null;
 
   beforeEach( function(){
     emptyStore = new RecordStore("Rockin' Reindeer", "Rovaniemi", 1000);
+    populatedStore = new RecordStore("Rockin' Reindeer", "Rovaniemi", 1000);
+
+    mariahRecord = new Record( "Mariah Carey", "Merry Christmas", 10.00 );
+    beachBoysRecord = new Record( "The Beach Boys", "The Beach Boys Christmas Album", 12.50);
+    frankRecord = new Record( "Frank Sinatra", "A Jolly Christmas From Frank Sinatra", 9.00);
+    bieberRecord = new Record( "Justin Bieber", "Under The Mistletoe", 6.66);
+
+
   });
 
   it( "should have record store name passed in constructor", function(){
@@ -16,7 +28,7 @@ describe( "Record Store", function(){
   });
 
   it( "should have no records if empty store", function(){
-    assert.equal( 0, emptyStore.records.length);
+    assert.equal( 0, emptyStore.numberOfRecords());
   });
 
 });
