@@ -56,7 +56,7 @@ describe( "Record Store", function(){
   });
 
   it( "should return index of record by title", function(){
-    assert.equal( 0, populatedStore.returnIndex("Merry Christmas") );
+    assert.equal( 2, populatedStore.returnIndex("A Jolly Christmas From Frank Sinatra") );
   });
 
   // it( "should sell a record and have 3 records left", function(){
