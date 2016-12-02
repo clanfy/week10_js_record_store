@@ -65,8 +65,13 @@ describe( "Record Store", function(){
   });
 
   it( "should confirm that inventory no longer has sold stock", function(){
-    populatedStore.sellRecord("Merry Christmas")
+    populatedStore.sellRecord("Merry Christmas");
     assert.deepEqual( [beachBoysRecord, frankRecord, bieberRecord], populatedStore.returnInventoryList() );
+  });
+
+  it( "should increase store balance if sold stock", function(){
+    populatedStore.sellRecord("A Jolly Christmas From Frank Sinatra");
+    assert.equal( 1009.00, populatedStore.balance);
   });
 
 });

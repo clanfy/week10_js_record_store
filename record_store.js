@@ -33,6 +33,7 @@ sellRecord: function( title ){
   for ( record of this.records ){
     if ( title === record.title){
       this.records.splice((this.returnIndex(title)), 1);
+      this.balance += record.price;
     };
   }
 }
