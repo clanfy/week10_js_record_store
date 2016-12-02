@@ -17,4 +17,8 @@ describe( "Record", function(){
     assert.equal( "Merry Christmas", mariahRecord.title );
   });
 
+  it( "should have price passed in constructor", function(){
+    assert.equal( 10.00, mariahRecord.price );
+  });
+
 });
