@@ -36,8 +36,15 @@ sellRecord: function( title ){
       this.balance += record.price;
     };
   }
-}
-
+},
+inventoryValue: function(){
+  var prices = this.records.map( function( record ){
+    return record.price;
+  });
+  return prices.reduce( function( a, b ){
+    return a + b}, 0)
+  }
+  
 };
 
 module.exports = RecordStore;

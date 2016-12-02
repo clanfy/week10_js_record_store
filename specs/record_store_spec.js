@@ -75,7 +75,7 @@ describe( "Record Store", function(){
   });
 
   it( "should report value of inventory", function(){
-    assert.equal( 28.16, populatedStore.inventoryValue());
+    assert.equal( 38.16, populatedStore.inventoryValue() );
   });
 
 });
