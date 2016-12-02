@@ -12,7 +12,7 @@ describe( "Record Store", function(){
   var bieberRecord = null;
 
   beforeEach( function(){
-    emptyStore = new RecordStore("Rockin' Reindeer", "Rovaniemi", 1000);
+    emptyStore = new RecordStore("Rockin' Reindeer", "Rovaniemi", 2500);
     populatedStore = new RecordStore("Rockin' Reindeer", "Rovaniemi", 1000);
 
     mariahRecord = new Record( "Mariah Carey", "Merry Christmas", 10.00 );
@@ -33,6 +33,10 @@ describe( "Record Store", function(){
 
   it( "should have record store city passed in constructor", function(){
     assert.equal("Rovaniemi", populatedStore.city );
+  });
+
+  it( "should have balance passed in constructor", function(){
+    assert.equal( 1000, populatedStore.balance);
   })
 
   it( "should have no records if empty store", function(){
@@ -41,7 +45,7 @@ describe( "Record Store", function(){
 
   it("should add 4 records", function(){
     assert.equal( 4, populatedStore.numberOfRecords());
-  })
+  });
 
 });
 
