@@ -64,5 +64,10 @@ describe( "Record Store", function(){
     assert.equal( 3, populatedStore.numberOfRecords() );
   });
 
+  it( "should confirm that inventory no longer has sold stock", function(){
+    populatedStore.sellRecord("Merry Christmas")
+    assert.deepEqual( [beachBoysRecord, frankRecord, bieberRecord], populatedStore.returnInventoryList() );
+  });
+
 });
 
