@@ -31,6 +31,10 @@ describe( "Record Store", function(){
     assert.equal( "Rockin' Reindeer", emptyStore.name );
   });
 
+  it( "should have record store city passed in constructor", function(){
+    assert.equal("Rovaniemi", populatedStore.city );
+  })
+
   it( "should have no records if empty store", function(){
     assert.equal( 0, emptyStore.numberOfRecords());
   });
