@@ -55,9 +55,14 @@ describe( "Record Store", function(){
     assert.deepEqual( ["Merry Christmas", "The Beach Boys Christmas Album", "A Jolly Christmas From Frank Sinatra", "Under The Mistletoe"], populatedStore.returnInventoryListTitles() );
   });
 
-  it( "should sell a record and have 3 records left", function(){
-    assert.equal( 3, populatedStore.sellRecord() );
-  })
+  it( "should return index of record by title", function(){
+    assert.equal( 0, populatedStore.returnIndex("Merry Christmas") );
+  });
+
+  // it( "should sell a record and have 3 records left", function(){
+  //   populatedStore.sellRecord("Under The Mistletoe")
+  //   assert.equal( 3, populatedStore.numberOfRecords() );
+  // })
 
 });
 

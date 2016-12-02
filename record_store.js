@@ -13,16 +13,23 @@ RecordStore.prototype = {
     this.records.push( record );
   },
   returnInventoryList: function(){
-    return this.records.map(function(record){
+    return this.records.map(function( record ){
       return record;
     });
   },
   returnInventoryListTitles: function(){
-     return this.records.map(function(record){
+     return this.records.map(function( record ){
       return record.title;
     });
+  },
+  sellRecord: function( title ){
+    for ( record in this.records ){
+      if ( title === record.title ){
+        this.records.splice((this.records.indexOf(record)),1);
+      }
+    }
   }
-  
+
 };
 
 module.exports = RecordStore;
