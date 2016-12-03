@@ -88,5 +88,6 @@ describe( "Record Store", function(){
     assert.equal("Inventory Value: £25.66, Bank Balance: £1012.50", populatedStore.reportFinancials() );
   });
 
+
 });
 

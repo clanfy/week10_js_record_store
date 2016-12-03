@@ -17,4 +17,8 @@ describe( "Customer", function(){
     assert.equal( 100.00, santa.wallet );
   });
 
+  it( "should have no records in collection at start", function(){
+    assert.equal( 0, santa.numberOfRecords());
+  });
+
 });
