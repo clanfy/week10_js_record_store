@@ -3,6 +3,7 @@ var RecordStore = function( name, city, balance ){
   this.city = city;
   this.balance = balance;
   this.records = [];
+  this.customers = [];
 };
 
 RecordStore.prototype = {
@@ -11,6 +12,12 @@ RecordStore.prototype = {
   },
   addRecord: function( record ){
     this.records.push( record );
+  },
+  welcomeCustomer: function( customer ){
+    this.customers.push(customer);
+  },
+  countCustomers: function(){
+    return this.customers.length;
   },
   returnInventoryList: function(){
     return this.records;
@@ -34,6 +41,9 @@ sellRecord: function( title ){
       this.balance += record.price;
     }
   }
+},
+sellRecordToCustomer: function( title ){
+  this.sellRecord( title);
 },
 inventoryValue: function(){
   var prices = this.records.map( function( record ){
