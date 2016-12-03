@@ -93,11 +93,11 @@ describe( "Record Store", function(){
     assert.equal( 1, populatedStore.countCustomers());
   });
 
-  // it( "should be able to sell record to customer", function(){
-  //   populatedStore.sellRecordToCustomer( "Merry Christmas" );
-  //   assert.equal( 3, populatedStore.numberOfRecords() );
-  //   assert.equal( 1, santa.numberOfRecords() );
-  // });
+  it( "should be able to sell record to customer", function(){
+    populatedStore.sellRecordToCustomer( "Merry Christmas", "Santa Claus" );
+    assert.equal( 3, populatedStore.numberOfRecords() );
+    assert.equal( 1, santa.numberOfRecords() );
+  });
 
 
 });

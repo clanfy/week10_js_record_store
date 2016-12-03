@@ -42,8 +42,16 @@ sellRecord: function( title ){
     }
   }
 },
-sellRecordToCustomer: function( title ){
+sellRecordToCustomer: function( title, customerName ){
   this.sellRecord( title);
+  for ( var customer of this.customers ){
+    if (customerName === customer.name){
+      for (var record of this.records){
+        if (title === record.title)
+          customer.buyRecord(record);
+      }
+    }
+  }
 },
 inventoryValue: function(){
   var prices = this.records.map( function( record ){
