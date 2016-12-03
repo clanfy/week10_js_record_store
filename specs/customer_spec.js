@@ -18,7 +18,7 @@ describe( "Customer", function(){
   });
 
   it( "should have no records in collection at start", function(){
-    assert.equal( 0, santa.numberOfRecords());
+    assert.equal( 0, santa.numberOfRecords() );
   });
 
 });
