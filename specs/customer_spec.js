@@ -36,6 +36,11 @@ describe( "Customer", function(){
     assert.equal( 1, santa.numberOfRecords() );
   });
 
+  it( "should buy correct record", function(){
+    santa.buyRecord(bieberRecord);
+    assert.deepEqual([bieberRecord], santa.returnCollection());
+  });
+
   it( "should reduce wallet balance when record bought", function(){
     santa.buyRecord(mariahRecord);
     assert.equal( 90.00, santa.wallet );

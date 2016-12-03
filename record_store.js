@@ -13,9 +13,7 @@ RecordStore.prototype = {
     this.records.push( record );
   },
   returnInventoryList: function(){
-    return this.records.map(function( record ){
-      return record;
-    });
+    return this.records;
   },
   returnInventoryListTitles: function(){
    return this.records.map(function( record ){

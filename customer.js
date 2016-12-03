@@ -8,6 +8,9 @@ Customer.prototype = {
   numberOfRecords: function(){
     return this.collection.length;
   },
+  returnCollection: function(){
+    return this.collection;
+  },
   buyRecord: function( record ){
     this.collection.push( record );
     this.wallet -= record.price;
