@@ -5,13 +5,14 @@ var Customer = function( name, wallet ){
 };
 
 Customer.prototype = {
+  numberOfRecords: function(){
+    return this.collection.length;
+  },
   buyRecord: function( record ){
     this.collection.push( record );
     this.wallet -= record.price;
-  },
-  numberOfRecords: function(){
-    return this.collection.length;
   }
+
 };
 
 module.exports = Customer;
