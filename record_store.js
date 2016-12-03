@@ -30,11 +30,11 @@ RecordStore.prototype = {
   return this.records.indexOf(foundRecord);
 },
 sellRecord: function( title ){
-  for ( record of this.records ){
+  for ( var record of this.records ){
     if ( title === record.title){
       this.records.splice((this.returnIndex(title)), 1);
       this.balance += record.price;
-    };
+    }
   }
 },
 inventoryValue: function(){
@@ -42,7 +42,7 @@ inventoryValue: function(){
     return record.price;
   });
   return prices.reduce( function( a, b ){
-    return a + b}, 0)
+    return a + b}, 0);
 },
 reportFinancials: function(){
   var financialsString = 

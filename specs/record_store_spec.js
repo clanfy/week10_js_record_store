@@ -1,6 +1,7 @@
 var assert = require('assert');
 var RecordStore = require('../record_store');
 var Record = require('../record');
+var Customer = require('../customer');
 
 describe( "Record Store", function(){
 
@@ -10,8 +11,10 @@ describe( "Record Store", function(){
   var beachBoysRecord = null;
   var frankRecord = null;
   var bieberRecord = null;
+  var santa = null;
 
   beforeEach( function(){
+
     emptyStore = new RecordStore("Rockin' Reindeer", "Rovaniemi", 2500);
     populatedStore = new RecordStore("Rockin' Reindeer", "Rovaniemi", 1000);
 
@@ -24,6 +27,8 @@ describe( "Record Store", function(){
     populatedStore.addRecord( beachBoysRecord );
     populatedStore.addRecord( frankRecord );
     populatedStore.addRecord( bieberRecord );
+
+    santa = new Customer("Santa Claus", 100.00);
 
   });
 
@@ -60,7 +65,7 @@ describe( "Record Store", function(){
   });
 
   it( "should sell a record and have 3 records left", function(){
-    populatedStore.sellRecord("Under The Mistletoe")
+    populatedStore.sellRecord("Under The Mistletoe");
     assert.equal( 3, populatedStore.numberOfRecords() );
   });
 
