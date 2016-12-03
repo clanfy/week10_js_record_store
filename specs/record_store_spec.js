@@ -88,6 +88,13 @@ describe( "Record Store", function(){
     assert.equal("Inventory Value: £25.66, Bank Balance: £1012.50", populatedStore.reportFinancials() );
   });
 
+  it( "should be able to sell record to customer", function(){
+    populatedStore.sellRecord( "Merry Christmas" );
+    santa.buyRecord( "Merry Christmas" );
+    assert.equal( 3, populatedStore.numberOfRecords() );
+    assert.equal( 1, santa.numberOfRecords() );
+  });
+
 
 });
 
