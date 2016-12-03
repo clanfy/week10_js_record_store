@@ -27,6 +27,7 @@ describe( "Record Store", function(){
     populatedStore.addRecord( beachBoysRecord );
     populatedStore.addRecord( frankRecord );
     populatedStore.addRecord( bieberRecord );
+    populatedStore.welcomeCustomer( santa );
 
     santa = new Customer("Santa Claus", 100.00);
 
@@ -89,7 +90,6 @@ describe( "Record Store", function(){
   });
 
   it (" should allow customer to enter store", function(){
-    populatedStore.welcomeCustomer(santa);
     assert.equal( 1, populatedStore.countCustomers());
   });
 
