@@ -95,14 +95,18 @@ describe( "Record Store", function(){
 
   it( "should check on customers", function(){
     assert.deepEqual([santa], populatedStore.checkCustomers());
-});
+  });
   
+  it( "should be able to sell record to customer", function(){
+    populatedStore.sellRecordToCustomer( "Merry Christmas", mariahRecord, santa );
+    assert.equal( 3, populatedStore.numberOfRecords() );
+    assert.equal( 1, santa.numberOfRecords() );
+  });
 
-  // it( "should be able to sell record to customer", function(){
-  //   populatedStore.sellRecordToCustomer( "Merry Christmas", mariahRecord, "Santa Claus" );
-  //   assert.equal( 3, populatedStore.numberOfRecords() );
-  //   assert.equal( 1, santa.numberOfRecords() );
-  // });
+  it( "should sell correct record to customer", function(){
+    populatedStore.sellRecordToCustomer( "Under The Mistletoe", bieberRecord, santa );
+    assert.deepEqual([bieberRecord], santa.collection);
+  });
 
 
 });

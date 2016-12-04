@@ -45,29 +45,10 @@ sellRecord: function( title ){
     }
   }
 },
-// sellRecordToCustomer: function( title, customerName ){
-//   this.sellRecord( title);
-
-//   for ( var customer of this.customers ){
-//     if ( customerName === customer.name ){
-//       for (var record of this.records){
-//         if (title === record.title)
-//           customer.buyRecord(record);
-//       }
-//     }
-//   }
-// },
-
-sellRecordToCustomer: function( title, record, customerName ){
+sellRecordToCustomer: function( title, record, customer ){
   this.sellRecord( title );
-
-  for (var customer in this.customers){
-    if (customerName === customer.name){
-      customer.buyRecord(record);
-    }
-  }
+  customer.buyRecord(record);
 },
-
 inventoryValue: function(){
   var prices = this.records.map( function( record ){
     return record.price;
