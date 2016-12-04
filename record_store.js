@@ -45,8 +45,8 @@ sellRecord: function( title ){
     }
   }
 },
-sellRecordToCustomer: function( title, record, customer ){
-  this.sellRecord( title );
+sellRecordToCustomer: function(record, customer ){
+  this.sellRecord( record.title );
   customer.buyRecord(record);
 },
 inventoryValue: function(){
