@@ -89,15 +89,20 @@ describe( "Record Store", function(){
     assert.equal("Inventory Value: £25.66, Bank Balance: £1012.50", populatedStore.reportFinancials() );
   });
 
-  it (" should allow customer to enter store", function(){
+  it(" should allow customer to enter store", function(){
     assert.equal( 1, populatedStore.countCustomers());
   });
 
-  it( "should be able to sell record to customer", function(){
-    populatedStore.sellRecordToCustomer( "Merry Christmas", "Santa Claus" );
-    assert.equal( 3, populatedStore.numberOfRecords() );
-    assert.equal( 1, santa.numberOfRecords() );
-  });
+  it( "should check on customers", function(){
+    assert.deepEqual([santa], populatedStore.checkCustomers());
+});
+  
+
+  // it( "should be able to sell record to customer", function(){
+  //   populatedStore.sellRecordToCustomer( "Merry Christmas", mariahRecord, "Santa Claus" );
+  //   assert.equal( 3, populatedStore.numberOfRecords() );
+  //   assert.equal( 1, santa.numberOfRecords() );
+  // });
 
 
 });

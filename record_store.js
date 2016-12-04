@@ -19,6 +19,9 @@ RecordStore.prototype = {
   countCustomers: function(){
     return this.customers.length;
   },
+  checkCustomers: function(){
+    return this.customers;
+  },
   returnInventoryList: function(){
     return this.records;
   },
@@ -42,17 +45,29 @@ sellRecord: function( title ){
     }
   }
 },
-sellRecordToCustomer: function( title, customerName ){
-  this.sellRecord( title);
-  for ( var customer of this.customers ){
+// sellRecordToCustomer: function( title, customerName ){
+//   this.sellRecord( title);
+
+//   for ( var customer of this.customers ){
+//     if ( customerName === customer.name ){
+//       for (var record of this.records){
+//         if (title === record.title)
+//           customer.buyRecord(record);
+//       }
+//     }
+//   }
+// },
+
+sellRecordToCustomer: function( title, record, customerName ){
+  this.sellRecord( title );
+
+  for (var customer in this.customers){
     if (customerName === customer.name){
-      for (var record of this.records){
-        if (title === record.title)
-          customer.buyRecord(record);
-      }
+      customer.buyRecord(record);
     }
   }
 },
+
 inventoryValue: function(){
   var prices = this.records.map( function( record ){
     return record.price;
